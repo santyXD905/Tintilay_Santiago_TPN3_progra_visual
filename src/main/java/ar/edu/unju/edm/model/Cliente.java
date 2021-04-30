@@ -246,7 +246,7 @@ public class Cliente {
 		
 		Period periodo =  Period.between(fechaAct, fechaNacimiento);
 		
-		return periodo.getYears();
+		return periodo.getYears()*-1;
 	}
 	
 	public String getTiempoDesdeUltimaCompra() {
@@ -264,7 +264,7 @@ public class Cliente {
 		Period periodo =  Period.between(fechaNacimiento,fechaAct3);
 		
 		mes=11-periodo.getMonths();
-		dia=periodo.getDays()-1;
+		dia=30-periodo.getDays();
 		//en caso de que  la consulta este en el año anterior al nuevo cumpleaños
 		
 		if(fechaNacimiento.getMonthValue() == fechaAct3.getMonthValue() && fechaNacimiento.getDayOfMonth() == fechaAct3.getDayOfMonth()) {
